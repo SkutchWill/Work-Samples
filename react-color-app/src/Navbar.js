@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IconButton, MenuItem, Select, Snackbar } from '@mui/material';
+import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
@@ -24,7 +25,7 @@ export default function Navbar(props) {
     return (
         <header className='Navbar'>
             <div className='logo'>
-                <a href='#'>reactcolorpicker</a>
+                <Link to='/'>reactcolorpicker</Link>
             </div>
             <div className='slider-container'>
                 <span>Level: {props.level}</span>

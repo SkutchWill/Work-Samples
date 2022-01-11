@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
-import { Route, Routes, Outlet, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Palette from './Palette';
-import { seedColors } from './seedColors';
 import { generatePalette } from './colorHelpers';
 
-function App() {
+function App(props) {
 
   let params = useParams();
 
   const findPallete = (id) => {
-      return seedColors.find(palette => palette.id === id);
+      return props.palettes.find(palette => palette.id === id);
   }
   return (
     <div className="App">
