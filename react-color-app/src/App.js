@@ -8,12 +8,12 @@ function App(props) {
 
   let params = useParams();
 
-  const findPallete = (id) => {
+  const findPalette = (id) => {
       return props.palettes.find(palette => palette.id === id);
   }
   return (
     <div className="App">
-      <Palette palette={generatePalette(findPallete(params.id))}/>
+      <Palette palette={generatePalette(findPalette(params.paletteId))}/>
     </div>
   );
 }

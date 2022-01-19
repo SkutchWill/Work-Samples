@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
 import { seedColors } from './seedColors';
+import App from './App';
 import PaletteList from './PaletteList';
+import SingleColorPalette from './SingleColorPalette';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,7 +13,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<PaletteList palettes={seedColors}/>}/>
-        <Route path='/palette/:id' element={<App palettes={seedColors}/>}/>
+        <Route path='/palette/:paletteId' element={<App palettes={seedColors}/>}/>
+        <Route path='/palette/:paletteId/:colorId' element={<SingleColorPalette palettes={seedColors}/>}/>
         <Route path='*' element={<h1>Oops! There is nothing here</h1>}/>
       </Routes>
     </BrowserRouter>    

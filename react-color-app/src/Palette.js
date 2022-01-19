@@ -6,14 +6,14 @@ import Navbar from './Navbar';
 
 export default function Palette(props) {
 
-    const { colors, emoji, paletteName} = props.palette;
+    const { colors, emoji, paletteName, id} = props.palette;
 
     const [ level, setLevel ] = useState(500);
 
     const [ format, setFormat ] = useState('hex');
 
     const colorBoxes = colors[level].map(color => (
-        <ColorBox background={color[format]} name={color.name} key={color.id}/>));
+        <ColorBox background={color[format]} name={color.name} key={color.id} singleUrl={`/palette/${id}/${color.id}`}/>));
 
     const changeLevel = (value) => {
         setLevel(value);
